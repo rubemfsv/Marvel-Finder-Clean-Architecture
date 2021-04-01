@@ -1,1 +1,1 @@
-export * from './MockUserListModel';
+export * from './MockCharacterListModel';
