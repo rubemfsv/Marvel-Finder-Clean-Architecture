@@ -1,8 +1,12 @@
-import React from 'react';
-import { Login } from '@/presentation/pages';
+import React, { useCallback } from 'react';
+import { Dashboard } from '@/presentation/pages';
+import { makeLoadCharacterList } from '@/main/factories/usecases';
 
 const makeDashboard: React.FC = () => {
-  return <Login />;
+  const loadCharacterList = useCallback((hero: string) => {
+    return makeLoadCharacterList(hero);
+  }, []);
+  return <Dashboard loadCharacterList={loadCharacterList} />;
 };
 
 export default makeDashboard;
