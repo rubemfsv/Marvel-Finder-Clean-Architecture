@@ -1,4 +1,4 @@
-@import '../styles/colors.scss';
+@import "../styles/colors.scss";
 
 * {
   font-family: sans-serif;
@@ -9,41 +9,6 @@
 }
 
 body {
-  background-color: $greenDescomplica;
-}
-
-input[type='password'],
-input[type='email'],
-input[type='text'] {
-  border: 1px solid $darkWhite;
-  background-color: transparent;
-  line-height: 40px;
-  border-radius: 0px;
-  height: 40px;
-  width: 290px;
-  padding: 0px 40px 0px 16px;
-  color: $black;
-  outline: none;
-
-  &:focus {
-    border-color: $greenAuxiliar2;
-  }
-}
-
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.9;
-  }
-
-  &:disabled {
-    color: $darkWhite;
-    opacity: 0.5;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+  background-color: $white;
+  padding: 20px 42px 0px 42px
 }
