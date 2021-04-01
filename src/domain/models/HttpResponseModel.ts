@@ -10,6 +10,6 @@ export type HttpResponseModel<T = unknown> = {
     limit: number,
     total: number,
     count: number,
-    results: T[] | null;
+    results: T | null;
   },
 };
