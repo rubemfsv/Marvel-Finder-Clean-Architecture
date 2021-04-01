@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 import { Character } from '@/domain/models';
+import { Table } from '@/presentation/components';
 import Styles from './styles.scss';
 
 type PaginationProps = {
@@ -9,21 +10,14 @@ type PaginationProps = {
 };
 
 const renderData = (data) => {
-  return (
-    <ul>
-      {data.map((todo, index) => {
-        // console.log(todo);
-        return <li key={index}>{todo.title}</li>;
-      })}
-    </ul>
-  );
+  return <Table charactersArray={data} />;
 };
 
 const Pagination: React.FC<PaginationProps> = ({
   content,
   itemPerPage,
 }: PaginationProps) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Character.Model[]>([]);
 
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(itemPerPage);
@@ -31,6 +25,16 @@ const Pagination: React.FC<PaginationProps> = ({
   const [pageNumberLimit, setpageNumberLimit] = useState(5);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+
+  useEffect(() => {
+    try {
+      if (content) {
+        setData(content);
+      }
+    } catch (error) {
+      console.log('try catch pagination load error', error);
+    }
+  }, [content]);
 
   const handleClick = (event) => {
     setcurrentPage(Number(event.target.id));
@@ -44,12 +48,6 @@ const Pagination: React.FC<PaginationProps> = ({
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  }, []);
 
   const renderPageNumbers = pages.map((number) => {
     if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
