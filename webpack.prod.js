@@ -47,7 +47,7 @@ module.exports = merge(common, {
   plugins: [
     new DefinePlugin({
       'process.env.API_URL': JSON.stringify(
-        'https://3nk600wdve.execute-api.us-west-1.amazonaws.com/prod'
+        'https://gateway.marvel.com:443/v1/public'
       ),
     }),
     new HtmlWebpackPlugin({
