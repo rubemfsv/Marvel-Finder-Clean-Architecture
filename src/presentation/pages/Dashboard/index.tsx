@@ -1,3 +1,4 @@
+import { CharacterModel } from '@/domain/models';
 import { ILoadCharacterList } from '@/domain/usecases';
 import { Header, Search } from '@/presentation/components';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -12,10 +13,13 @@ const Dashboard: React.FC<DashboardProps> = ({
   loadCharacterList,
 }: DashboardProps) => {
   const [search, setSearch] = useState('');
+  const [searchResult, setSearchResult] = useState<CharacterModel[]>();
+  console.log('searchResult', searchResult);
+
   useEffect(() => {
     loadCharacterList(search)
       .load()
-      .then((response) => console.log(response))
+      .then((response) => setSearchResult(response.data.results))
       .catch((error) => console.log(error));
   }, [search]);
 
@@ -24,10 +28,13 @@ const Dashboard: React.FC<DashboardProps> = ({
   }, []);
 
   return (
-    <div className={Styles.dashboard}>
-      <Header />
-      <Search getInputResult={getSearchResult} />
-    </div>
+    <>
+      <div className={Styles.dashboard}>
+        <Header />
+        <Search getInputResult={getSearchResult} />
+      </div>
+      <div className={Styles.footer} />
+    </>
   );
 };
 
