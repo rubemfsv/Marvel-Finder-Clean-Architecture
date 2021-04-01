@@ -15,4 +15,9 @@
   width: 400px;
   height: 31px;
   border: 1px solid $grey;
+  overflow: hidden;
+  appearance: none;
+  outline: 0;
+  font-size: 14px;
+  padding: 0 10px 0 10px;
 }
