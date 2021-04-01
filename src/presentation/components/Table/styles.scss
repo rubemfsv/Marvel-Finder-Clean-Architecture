@@ -1,0 +1,28 @@
+@import "../../styles/index.scss";
+
+.tableContent {
+  width: 100%;
+  tr > th {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 16px;
+    color: $grey;
+    border-right: 1px solid $red;
+    border-bottom: 1px solid $red;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  td {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    color: $grey;
+    border-right: 1px solid $red;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
