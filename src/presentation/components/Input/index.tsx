@@ -9,7 +9,6 @@ interface IInputProps
     HTMLInputElement
   > {
   title?: string;
-  hideStatus?: boolean;
 }
 
 const Input: React.FC<IInputProps> = (props: IInputProps) => {
