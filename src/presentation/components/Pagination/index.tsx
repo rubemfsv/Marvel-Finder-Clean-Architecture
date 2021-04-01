@@ -109,7 +109,7 @@ const Pagination: React.FC<PaginationProps> = ({
             onClick={handleBackbutton}
             disabled={currentPage == pages[0] ? true : false}
           >
-            <FaCaretLeft />
+            <FaCaretLeft className={Styles.icon} />
           </button>
         </li>
         {pageDecrementButton}
@@ -121,7 +121,7 @@ const Pagination: React.FC<PaginationProps> = ({
             onClick={handleNextbutton}
             disabled={currentPage == pages[pages.length - 1] ? true : false}
           >
-            <FaCaretRight />
+            <FaCaretRight className={Styles.icon} />
           </button>
         </li>
       </ul>
