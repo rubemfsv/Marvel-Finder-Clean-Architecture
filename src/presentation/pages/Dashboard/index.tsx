@@ -1,6 +1,6 @@
 import { Character } from '@/domain/models';
 import { ILoadCharacterList } from '@/domain/usecases';
-import { Header, Search } from '@/presentation/components';
+import { Header, Pagination, Search } from '@/presentation/components';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import Styles from './styles.scss';
@@ -14,7 +14,6 @@ const Dashboard: React.FC<DashboardProps> = ({
 }: DashboardProps) => {
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState<Character.Model[]>();
-  console.log('searchResult', searchResult);
 
   useEffect(() => {
     loadCharacterList(search)
@@ -33,6 +32,7 @@ const Dashboard: React.FC<DashboardProps> = ({
         <Header />
         <Search getInputResult={getSearchResult} />
       </div>
+      <Pagination content={searchResult} itemPerPage={10} />
       <div className={Styles.footer} />
     </>
   );
