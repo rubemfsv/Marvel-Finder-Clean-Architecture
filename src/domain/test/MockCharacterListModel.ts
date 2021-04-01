@@ -85,7 +85,6 @@ export const mockCharacterModel = (): LoadCharacterList.Model => ({
       type: faker.name.findName(),
     },
   ]
-
 })
 
 export const mockCharacterListModel = (): HttpResponseModel<LoadCharacterList.Model[]> => ({
