@@ -1,0 +1,61 @@
+@import "../../styles/index.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 42px 0px 42px;
+}
+
+.pageNumbers {
+  list-style: none;
+  display: flex;
+
+  justify-content: center;
+}
+
+.pageNumbers li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pageNumbersActive {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  background-color: $red;
+  color: $white;
+  border-radius: 25px;
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px 0px 10px;
+  font-weight: bold;
+}
+
+.pageNumbersInactive {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: $red;
+  border: 1px solid $red;
+  border-radius: 25px;
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px 0px 10px;
+}
+
+.pageNumbers li button {
+  background-color: transparent;
+  border: none;
+  color: $red;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.pageNumbers li button:hover {
+  background-color: transparent;
+  color: $red;
+  opacity: 0.35;
+}
+.pageNumbers li button:focus {
+  outline: none;
+}
