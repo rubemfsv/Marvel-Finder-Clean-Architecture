@@ -1,5 +1,5 @@
 import { ILoadCharacterList } from '@/domain/usecases';
-import { Header } from '@/presentation/components';
+import { Header, Search } from '@/presentation/components';
 import React, { useEffect } from 'react';
 
 import Styles from './styles.scss';
@@ -20,6 +20,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   return (
     <div className={Styles.dashboard}>
       <Header />
+      <Search />
     </div>
   );
 };
