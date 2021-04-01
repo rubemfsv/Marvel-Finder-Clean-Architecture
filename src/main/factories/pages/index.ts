@@ -1,1 +1,1 @@
-export { default as makeLogin } from './Login';
+export { default as makeDashboard } from './Dashboard';
