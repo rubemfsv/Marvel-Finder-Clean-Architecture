@@ -1,4 +1,4 @@
-import { CharacterModel } from '@/domain/models';
+import { Character } from '@/domain/models';
 import { ILoadCharacterList } from '@/domain/usecases';
 import { Header, Search } from '@/presentation/components';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -13,7 +13,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   loadCharacterList,
 }: DashboardProps) => {
   const [search, setSearch] = useState('');
-  const [searchResult, setSearchResult] = useState<CharacterModel[]>();
+  const [searchResult, setSearchResult] = useState<Character.Model[]>();
   console.log('searchResult', searchResult);
 
   useEffect(() => {
