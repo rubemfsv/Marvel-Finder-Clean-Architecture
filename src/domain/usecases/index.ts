@@ -1,2 +1,2 @@
-export * from './Github/LoadUserFollowersList';
+export * from './Characters/LoadCharacterList';
 
