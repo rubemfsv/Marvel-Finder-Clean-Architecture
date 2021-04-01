@@ -1,3 +1,3 @@
-export * from './Github/loadUserFollowersList/RemoteLoadUserFollowersList';
+export * from './Characters/loadCharacterList/RemoteLoadCharacterList';
 
 
