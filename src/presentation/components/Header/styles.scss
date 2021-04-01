@@ -1,0 +1,26 @@
+@import "../../styles/colors.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.systemTitleContainer {
+  flex-direction: row;
+}
+.systemTitleBorder {
+  font-size: 25px;
+  font-weight: bolder;
+  color: $red;
+  border-bottom: 4px solid $red;
+}
+.systemTitleBold {
+  font-size: 25px;
+  font-weight: bolder;
+  color: $red;
+}
+.systemTitleRegular {
+  font-size: 25px;
+  color: $red;
+}
