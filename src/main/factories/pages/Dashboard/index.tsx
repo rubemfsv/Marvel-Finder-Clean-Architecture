@@ -3,9 +3,8 @@ import { Dashboard } from '@/presentation/pages';
 import { makeLoadCharacterList } from '@/main/factories/usecases';
 
 const makeDashboard: React.FC = () => {
-  const loadCharacterList = useCallback((hero: string) => {
-    return makeLoadCharacterList(hero);
-  }, []);
+  const loadCharacterList = useCallback(makeLoadCharacterList, []);
+
   return <Dashboard loadCharacterList={loadCharacterList} />;
 };
 
