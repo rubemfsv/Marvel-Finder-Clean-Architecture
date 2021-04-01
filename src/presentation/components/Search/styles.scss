@@ -1,0 +1,18 @@
+@import "../../styles/colors.scss";
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchLabel {
+  color: $red;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.searchInput {
+  width: 400px;
+  height: 31px;
+  border: 1px solid $grey;
+}
