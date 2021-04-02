@@ -10,12 +10,6 @@
 .systemTitleContainer {
   flex-direction: row;
 }
-.systemTitleBorder {
-  font-size: 25px;
-  font-weight: bolder;
-  color: $red;
-  border-bottom: 4px solid $red;
-}
 .systemTitleBold {
   font-size: 25px;
   font-weight: bolder;
@@ -24,4 +18,8 @@
 .systemTitleRegular {
   font-size: 25px;
   color: $red;
+}
+.line {
+  border-bottom: 4px solid $red;
+  width: 54px;
 }
