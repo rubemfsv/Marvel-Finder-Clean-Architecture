@@ -2,13 +2,22 @@
 
 .tableContent {
   width: 100%;
+
+  .columnHeader {
+    width: 320px;
+    text-align: center;
+  }
+
+  th {
+    background-color: $red;
+    color: $white;
+  }
+
   tr > th {
     padding: 10px 10px 10px 10px;
     text-align: center;
     font-size: 16px;
-    color: $grey;
-    border-right: 1px solid $red;
-    border-bottom: 1px solid $red;
+    border-right: 3px solid $white;
 
     &:last-child {
       border-right: none;
@@ -20,7 +29,7 @@
     text-align: center;
     padding: 10px 10px 10px 10px;
     color: $grey;
-    border-right: 1px solid $red;
+    border-bottom: 1px solid $red;
     &:last-child {
       border-right: none;
     }

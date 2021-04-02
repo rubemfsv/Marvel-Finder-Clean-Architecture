@@ -2,6 +2,7 @@
 
 .tableBodyItem {
   &:hover {
-    background-color: rgba(46, 46, 46, 0.219);
+    background-color: $red;
+    opacity: 30%;
   }
 }

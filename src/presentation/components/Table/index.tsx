@@ -13,8 +13,8 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
     <table className={Styles.tableContent}>
       <thead>
         <tr>
-          <th>Personagem</th>
-          <th>Séries</th>
+          <th className={Styles.columnHeader}>Personagem</th>
+          <th className={Styles.columnHeader}>Séries</th>
           <th>Eventos</th>
         </tr>
       </thead>
