@@ -1,0 +1,17 @@
+@import "../../styles/index.scss";
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.heroDetails {
+  display: flex;
+  flex-direction: column;
+  // width: 100%;
+  padding: 0px 42px 0px 42px;
+
+  @media only screen and (max-width: $breakpoint) {
+    padding: 0px 30px 0px 30px;
+  }
+}
