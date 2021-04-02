@@ -12,7 +12,6 @@ const HeroCard: React.FC<HeroCardProps> = ({
   character,
   index,
 }: HeroCardProps) => {
-  console.log(character);
   return (
     <tr key={index} className={Styles.tableBodyItem}>
       <td>
@@ -25,8 +24,34 @@ const HeroCard: React.FC<HeroCardProps> = ({
           <span className={Styles.characterName}>{character.name}</span>
         </div>
       </td>
-      <td>{character.series.available}</td>
-      <td>{character.events.available}</td>
+      <td>
+        {character.series.items.reduce((mappedItems, item, index) => {
+          if (index < 3) {
+            mappedItems.push(
+              <div key={index}>
+                <span className={Styles.itemName}>{item.name}</span>
+                <br />
+              </div>
+            );
+          }
+
+          return mappedItems;
+        }, [])}
+      </td>
+      <td>
+        {character.events.items.reduce((mappedItems, item, index) => {
+          if (index < 3) {
+            mappedItems.push(
+              <div key={index}>
+                <span className={Styles.itemName}>{item.name}</span>
+                <br />
+              </div>
+            );
+          }
+
+          return mappedItems;
+        }, [])}
+      </td>
     </tr>
   );
 };
