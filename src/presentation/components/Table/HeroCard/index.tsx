@@ -1,19 +1,27 @@
+import React, { useCallback } from 'react';
 import { Character } from '@/domain/models';
-import React from 'react';
 
 import Styles from './styles.scss';
 
 type HeroCardProps = {
   character: Character.Model;
   index: number;
+  getOpenModalFunction: (state: boolean, hero: Character.Model) => void;
+  modalState: boolean;
 };
 
 const HeroCard: React.FC<HeroCardProps> = ({
   character,
   index,
+  getOpenModalFunction,
+  modalState,
 }: HeroCardProps) => {
+  const openModal = useCallback(() => {
+    getOpenModalFunction(!modalState, character);
+  }, []);
+
   return (
-    <tr key={index} className={Styles.tableBodyItem}>
+    <tr key={index} className={Styles.tableBodyItem} onClick={openModal}>
       <td>
         <div className={Styles.characterInfoContainer}>
           <img
