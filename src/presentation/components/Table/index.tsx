@@ -19,9 +19,9 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {charactersArray.map((character: Character.Model, index: number) => {
-          return <HeroCard character={character} index={index} />;
-        })}
+        {charactersArray.map((character: Character.Model, index: number) => (
+          <HeroCard character={character} index={index} key={index} />
+        ))}
       </tbody>
     </table>
   );
