@@ -27,7 +27,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   }, []);
 
   return (
-    <>
+    <div className={Styles.container}>
       <div className={Styles.dashboard}>
         <Header />
         <Search getInputResult={getSearchResult} />
@@ -36,7 +36,7 @@ const Dashboard: React.FC<DashboardProps> = ({
         <Pagination content={searchResult} itemPerPage={10} />
       </div>
       <div className={Styles.footer} />
-    </>
+    </div>
   );
 };
 
