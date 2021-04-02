@@ -22,6 +22,12 @@
   float: left;
 }
 
+.itemColumn {
+  @media only screen and (max-width: $breakpoint) {
+    display: none;
+  }
+}
+
 .tableBodyItem {
   &:hover {
     background-color: $red;

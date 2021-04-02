@@ -24,7 +24,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
           <span className={Styles.characterName}>{character.name}</span>
         </div>
       </td>
-      <td>
+      <td className={Styles.itemColumn}>
         {character.series.items.reduce((mappedItems, item, index) => {
           if (index < 3) {
             mappedItems.push(
@@ -38,7 +38,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
           return mappedItems;
         }, [])}
       </td>
-      <td>
+      <td className={Styles.itemColumn}>
         {character.events.items.reduce((mappedItems, item, index) => {
           if (index < 3) {
             mappedItems.push(

@@ -3,9 +3,18 @@
 .tableContent {
   width: 100%;
 
-  .columnHeader {
+  @media only screen and (max-width: $breakpoint) {
+    width: auto;
+
+  }
+
+  .itemHeader {
     width: 350px;
     text-align: center;
+
+    @media only screen and (max-width: $breakpoint) {
+      display: none;
+    }
   }
 
   th {

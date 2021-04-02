@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         </div>
         <div className={Styles.line} />
       </div>
-      <span className={Styles.systemTitleRegular}>@RUBEMFSV</span>
+      <span className={Styles.userNameTitle}>@RUBEMFSV</span>
     </div>
   );
 };

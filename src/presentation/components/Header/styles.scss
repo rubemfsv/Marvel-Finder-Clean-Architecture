@@ -6,6 +6,15 @@
   width: 100%;
   justify-content: space-between;
   margin-bottom: 34px;
+  padding-top: 10px;
+
+  @media only screen and (max-width: $breakpoint) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 12px 0;
+  }
 }
 .systemTitleContainer {
   flex-direction: row;
@@ -14,12 +23,29 @@
   font-size: 25px;
   font-weight: bolder;
   color: $red;
+
+  @media only screen and (max-width: $breakpoint) {
+    font-size: 16px;
+  }
 }
 .systemTitleRegular {
   font-size: 25px;
   color: $red;
+
+  @media only screen and (max-width: $breakpoint) {
+    font-size: 16px;
+  }
 }
 .line {
   border-bottom: 4px solid $red;
   width: 54px;
+}
+
+.userNameTitle {
+  font-size: 25px;
+  color: $red;
+
+  @media only screen and (max-width: $breakpoint) {
+    display: none;
+  }
 }
