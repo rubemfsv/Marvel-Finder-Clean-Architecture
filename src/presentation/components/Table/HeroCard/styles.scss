@@ -1,5 +1,22 @@
 @import "../../../styles/index.scss";
 
+.characterInfoContainer {
+  display: flex;
+  margin: 20px 0 20px 10px;
+
+  .characterAvatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-right: 25px;
+  }
+
+  .characterName {
+    align-self: center;
+    color: $black;
+  }
+}
+
 .tableBodyItem {
   &:hover {
     background-color: $red;
