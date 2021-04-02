@@ -99,30 +99,35 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   return (
-    <div className={Styles.container}>
-      {renderData(currentItems)}
-      <ul className={pages.length <= 1 ? Styles.singlePage : Styles.pageNumbers}>
-        <li>
-          <button
-            onClick={handleBackbutton}
-            disabled={currentPage == pages[0] ? true : false}
-          >
-            <FaCaretLeft className={Styles.icon} />
-          </button>
-        </li>
-        {pageDecrementButton}
-        {renderPageNumbers}
-        {pageIncrementButton}
+    <div className={Styles.pageContent}>
+      <div className={Styles.container}>
+        {renderData(currentItems)}
+        <ul
+          className={pages.length <= 1 ? Styles.singlePage : Styles.pageNumbers}
+        >
+          <li>
+            <button
+              onClick={handleBackbutton}
+              disabled={currentPage == pages[0] ? true : false}
+            >
+              <FaCaretLeft className={Styles.icon} />
+            </button>
+          </li>
+          {pageDecrementButton}
+          {renderPageNumbers}
+          {pageIncrementButton}
 
-        <li>
-          <button
-            onClick={handleNextbutton}
-            disabled={currentPage == pages[pages.length - 1] ? true : false}
-          >
-            <FaCaretRight className={Styles.icon} />
-          </button>
-        </li>
-      </ul>
+          <li>
+            <button
+              onClick={handleNextbutton}
+              disabled={currentPage == pages[pages.length - 1] ? true : false}
+            >
+              <FaCaretRight className={Styles.icon} />
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div className={Styles.footer} />
     </div>
   );
 };

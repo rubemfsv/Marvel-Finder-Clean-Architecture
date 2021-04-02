@@ -35,7 +35,6 @@ const Dashboard: React.FC<DashboardProps> = ({
       <div className={Styles.paginationContainer}>
         <Pagination content={searchResult} itemPerPage={10} />
       </div>
-      <div className={Styles.footer} />
     </div>
   );
 };

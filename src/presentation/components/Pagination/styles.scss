@@ -1,10 +1,26 @@
 @import "../../styles/index.scss";
 
+.pageContent {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 20px 42px 0px 42px;
+}
+
+.footer {
+  background-color: $red;
+  height: 10px;
+  width: 100%;
+
+  @media only screen and (max-width: $breakpoint) {
+    // position: absolute;
+    // bottom: 0;
+  }
 }
 
 .pageNumbers {
@@ -15,6 +31,10 @@
   position: relative;
   bottom: 0;
   margin: 16px 0 16px 0;
+  @media only screen and (max-width: $breakpoint) {
+    margin: 9vh 0 9vh 0;
+
+  }
 }
 
 .singlePage {
@@ -27,6 +47,10 @@
   bottom: 0;
   margin: 16px 0 16px 0;
   min-height: 68vh;
+  @media only screen and (max-width: $breakpoint) {
+    margin: 10vh 0 10vh 0;
+
+  }
 }
 
 .pageNumbers li {
