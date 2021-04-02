@@ -101,7 +101,7 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className={Styles.container}>
       {renderData(currentItems)}
-      <ul className={Styles.pageNumbers}>
+      <ul className={pages.length <= 1 ? Styles.singlePage : Styles.pageNumbers}>
         <li>
           <button
             onClick={handleBackbutton}
