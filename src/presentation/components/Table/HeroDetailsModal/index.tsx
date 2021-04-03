@@ -43,18 +43,18 @@ const HeroDetailsModal: React.FC<HeroDetailsModalProps> = ({
             <table className={Styles.tableContent}>
               <thead>
                 <tr>
-                  <th className={Styles.itemHeader}>Comics</th>
-                  <th className={Styles.itemHeader}>Events</th>
-                  <th className={Styles.itemHeader}>Series</th>
-                  <th className={Styles.itemHeader}>Stories</th>
+                  <th className={Styles.itemHeader}>Séries</th>
+                  <th className={Styles.itemHeader}>Eventos</th>
+                  <th className={Styles.itemHeader}>Histórias</th>
+                  <th className={Styles.itemHeader}>Quadrinhos</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>{selectedHero.comics.available}</td>
-                  <td>{selectedHero.events.available}</td>
                   <td>{selectedHero.series.available}</td>
+                  <td>{selectedHero.events.available}</td>
                   <td>{selectedHero.stories.available}</td>
+                  <td>{selectedHero.comics.available}</td>
                 </tr>
               </tbody>
             </table>
@@ -62,7 +62,7 @@ const HeroDetailsModal: React.FC<HeroDetailsModalProps> = ({
           <div className={Styles.buttonContainer}>
             <div className={Styles.infoTitleContainer}>
               <span className={Styles.infoPlus}>+</span>
-              <span className={Styles.infoText}>Info</span>
+              <span className={Styles.infoText}>Infos</span>
             </div>
             <div className={Styles.buttonsContainer}>
               {selectedHero.urls.map(
