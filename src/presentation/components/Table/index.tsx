@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Character } from '@/domain/models';
 
 import Styles from './styles.scss';
@@ -11,15 +11,14 @@ type TableProps = {
 
 const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
   const [show, setShow] = useState<boolean>(false);
-  const [selectedHero, setSelectedHero] = useState<Character.Model>();
+  const [arrayPosition, setArrayPosition] = useState<number>();
+  const hero: Character.Model = charactersArray[arrayPosition];
 
-  const getOpenModalFunction = useCallback(
-    (state: boolean, hero: Character.Model) => {
-      setShow(state);
-      setSelectedHero(hero);
-    },
-    []
-  );
+  const getOpenModalFunction = useCallback((state: boolean, index: number) => {
+    setShow(state);
+    console.log('hero', hero);
+    setArrayPosition(index);
+  }, []);
 
   const getClosedModal = useCallback((isClosed: boolean) => {
     setShow(!isClosed);
@@ -39,8 +38,8 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
           {charactersArray.map((character: Character.Model, index: number) => (
             <HeroCard
               character={character}
-              index={index}
               key={index}
+              index={index}
               modalState={show}
               getOpenModalFunction={getOpenModalFunction}
             />
@@ -48,10 +47,7 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
         </tbody>
       </table>
       {show && (
-        <HeroDetailsModal
-          selectedHero={selectedHero}
-          getClosedModal={getClosedModal}
-        />
+        <HeroDetailsModal selectedHero={hero} getClosedModal={getClosedModal} />
       )}
     </>
   );
