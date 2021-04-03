@@ -38,7 +38,7 @@ const HeroDetailsModal: React.FC<HeroDetailsModalProps> = ({
           <div className={Styles.descriptionContainer}>
             {selectedHero.description}
           </div>
-          <hr className={Styles.division} />
+          <div className={Styles.division} />
           <div className={Styles.dataContainer}>
             <table className={Styles.tableContent}>
               <thead>
