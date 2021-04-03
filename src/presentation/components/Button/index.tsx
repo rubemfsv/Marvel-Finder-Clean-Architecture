@@ -1,5 +1,6 @@
-import { Character } from '@/domain/models';
 import React from 'react';
+import { Character } from '@/domain/models';
+import { variantTranslation } from '@/presentation/utils';
 
 import Styles from './styles.scss';
 
@@ -10,7 +11,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ response }: ButtonProps) => {
   return (
     <a href={response.url} className={Styles.buttonContainer} target="_blank">
-      {response.type}
+      {variantTranslation[response.type]}
     </a>
   );
 };
