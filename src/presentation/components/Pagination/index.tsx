@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 import { Character } from '@/domain/models';
 import { Table } from '@/presentation/components';
+import NoContent from './NoContent';
+
 import Styles from './styles.scss';
 
 type PaginationProps = {
@@ -9,8 +11,12 @@ type PaginationProps = {
   itemPerPage: number;
 };
 
-const renderData = (data) => {
-  return <Table charactersArray={data} />;
+const renderData = (data: Character.Model[]) => {
+  if (data.length > 0) {
+    return <Table charactersArray={data} />;
+  } else {
+    return <NoContent />;
+  }
 };
 
 const Pagination: React.FC<PaginationProps> = ({
