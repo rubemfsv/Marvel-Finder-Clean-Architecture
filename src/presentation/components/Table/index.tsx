@@ -16,7 +16,6 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
 
   const getOpenModalFunction = useCallback((state: boolean, index: number) => {
     setShow(state);
-    console.log('hero', hero);
     setArrayPosition(index);
   }, []);
 
