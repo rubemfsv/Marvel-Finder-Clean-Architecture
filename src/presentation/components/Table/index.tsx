@@ -30,9 +30,9 @@ const Table: React.FC<TableProps> = ({ charactersArray }: TableProps) => {
       <table className={Styles.tableContent}>
         <thead>
           <tr>
-            <th className={Styles.characterHeader}>Personagem</th>
-            <th className={Styles.itemHeader}>Séries</th>
-            <th className={Styles.itemHeader}>Eventos</th>
+            <th>Personagem</th>
+            <th>Séries</th>
+            <th>Eventos</th>
           </tr>
         </thead>
         <tbody>
