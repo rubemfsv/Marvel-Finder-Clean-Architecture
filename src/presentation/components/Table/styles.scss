@@ -1,11 +1,8 @@
 @import "../../styles/index.scss";
 
 .tableContent {
-  width: 100%;
-
   @media only screen and (max-width: $breakpoint) {
     width: auto;
-
   }
 
   .itemHeader {
@@ -14,33 +11,6 @@
 
     @media only screen and (max-width: $breakpoint) {
       display: none;
-    }
-  }
-
-  th {
-    background-color: $red;
-    color: $white;
-  }
-
-  tr > th {
-    padding: 10px 10px 10px 10px;
-    text-align: center;
-    font-size: 16px;
-    border-right: 9px solid $white;
-
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  td {
-    font-size: 16px;
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    color: $grey;
-    border-bottom: 1px solid $red;
-    &:last-child {
-      border-right: none;
     }
   }
 }
