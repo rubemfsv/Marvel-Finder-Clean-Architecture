@@ -4,11 +4,10 @@ Deploy link: https://admiring-hamilton-9d112d.netlify.app/
 
 ## Proposal
 
-It is an application to search for information about Marvel's heroes, to be able to see their basic infos in a table. You can also view information about specific heroes after click in the table.
+It is an application to search for information about Marvel's heroes, to be able to see their basic infos in a table. You can also view information about specific heroes after click in the table. This project was built using clean architecture and clean code priciples.
 
 # :pushpin: Sumary
 
-- :pushpin: [Sumary](#:pushpin:-tabela-de-conteúdos)
 - :construction_worker: [Installation](#:construction_worker:-instalação)
 - :open_file_folder: [Architecture](#:open_file_folder:-diretórios)
 
@@ -59,4 +58,5 @@ src/
     components/
     pages/
     styles/
+    utils/
 ```
