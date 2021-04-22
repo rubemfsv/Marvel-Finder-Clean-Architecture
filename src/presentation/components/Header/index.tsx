@@ -8,7 +8,6 @@ const Header: React.FC = () => {
       <div className={Styles.systemTitleContainer}>
         <div>
           <span className={Styles.systemTitleBold}>BUSCA MARVEL</span>
-          <span className={Styles.systemTitleRegular}>TESTE FRONT-END</span>
         </div>
         <div className={Styles.line} />
       </div>

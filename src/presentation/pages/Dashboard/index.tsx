@@ -1,7 +1,7 @@
+import React, { useCallback, useEffect, useState } from 'react';
 import { Character } from '@/domain/models';
 import { ILoadCharacterList } from '@/domain/usecases';
 import { Header, Pagination, Search } from '@/presentation/components';
-import React, { useCallback, useEffect, useState } from 'react';
 
 import Styles from './styles.scss';
 
