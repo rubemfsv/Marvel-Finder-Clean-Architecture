@@ -25,7 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }: PaginationProps) => {
   const [data, setData] = useState<Character.Model[]>([]);
 
-  const [currentPage, setcurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(itemPerPage);
 
   const [pageNumberLimit, setpageNumberLimit] = useState(6);
@@ -35,7 +35,12 @@ const Pagination: React.FC<PaginationProps> = ({
   useEffect(() => {
     try {
       if (content) {
-        setData(content);
+        if (content.length <= 1) {
+          setData(content);
+          setCurrentPage(1);
+        } else {
+          setData(content);
+        }
       }
     } catch (error) {
       console.log('try catch pagination load error', error);
@@ -43,7 +48,7 @@ const Pagination: React.FC<PaginationProps> = ({
   }, [content]);
 
   const handleClick = (event) => {
-    setcurrentPage(Number(event.target.id));
+    setCurrentPage(Number(event.target.id));
   };
 
   const pages = [];
@@ -77,7 +82,7 @@ const Pagination: React.FC<PaginationProps> = ({
   });
 
   const handleNextbutton = () => {
-    setcurrentPage(currentPage + 1);
+    setCurrentPage(currentPage + 1);
 
     if (currentPage + 1 > maxPageNumberLimit) {
       setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
@@ -91,7 +96,7 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   const handleBackbutton = () => {
-    setcurrentPage(currentPage - 1);
+    setCurrentPage(currentPage - 1);
 
     if ((currentPage - 1) % pageNumberLimit == 0) {
       setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
